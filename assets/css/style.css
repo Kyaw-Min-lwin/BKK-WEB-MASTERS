@@ -1307,9 +1307,10 @@ General Styles - Owlcarousel
   color: #fff;
 }
 
-#service-nav{
+#service-nav {
   background-color: #000;
 }
+
 .navbar-custom .nav li>a {
   position: relative;
   color: rgba(255, 255, 255, 1);
@@ -1428,7 +1429,9 @@ General Styles - Owlcarousel
 
 .service-page-header {
   /* border-bottom: 5px solid black; */
-  box-shadow: rgb(0, 0, 0) 0px 00px 30px 0px;
+  background-color: rgba(0, 0, 0, 0.45);
+  background-blend-mode: multiply;
+  /* box-shadow: rgb(0, 0, 0) 0px 00px 30px 0px; */
 }
 
 /* Pricing Page Header */
@@ -1439,6 +1442,14 @@ General Styles - Owlcarousel
 
 .pricing-page-header:before {
   background: rgba(2, 2, 2, 0.6);
+}
+
+.pricing-page-header #pricing-title {
+  color: aqua;
+  text-shadow: -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px -1px 0 #000000,
+    -1px -1px 0 #000000;
 }
 
 /* Gallery Page Header */
@@ -1517,18 +1528,28 @@ General Styles - Owlcarousel
   background: rgba(34, 34, 34, 0.3);
 }
 
-#service-header{
-  background-color: rgba(6, 44, 6, 0.3);
-}
-#service-header #service-h2{
-  color: #000;
+/* #service-header {
+  background-color: rgba(0, 0, 0, 0.5);
+} */
+
+#service-header #service-h2 {
+  color: #fff;
+  text-shadow: -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
   font-weight: 700;
 }
 
-#service-header #service-div{
-  color: #000;
+#service-header #service-div {
+  color: #fff;
+  text-shadow: -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
   font-weight: 600;
 }
+
 /*--------------------------------------------------------------
 	Footer
 --------------------------------------------------------------*/
