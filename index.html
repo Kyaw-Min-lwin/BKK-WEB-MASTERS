@@ -2,6 +2,19 @@
 <html lang="en-US" dir="ltr">
 
 <head>
+    <!-- Preload critical resources to reduce LCP delay -->
+    <link rel="preload" href="path-to-large-image.jpg" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" as="font"
+      type="font/woff2" crossorigin>
+    
+    <!-- Asynchronous loading of non-essential scripts -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1LJK6SB3F2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-1LJK6SB3F2');
+    </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1LJK6SB3F2" async></script>
   <script async>
