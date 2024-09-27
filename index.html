@@ -4,7 +4,7 @@
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1LJK6SB3F2" defer></script>
-  <script>
+  <script defer>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
@@ -50,18 +50,20 @@
     onload="if(media!=='all')media='all'">
   <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet" media="none"
     onload="if(media!=='all')media='all'">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" media="none"
+    onload="if(media!=='all')media='all'">
   <link href="assets/lib/animate.css/animate.css" rel="stylesheet">
   <link href="assets/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="assets/lib/et-line-font/et-line-font.css" rel="stylesheet">
   <link href="assets/lib/flexslider/flexslider.css" rel="stylesheet">
-  <link href="assets/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
+  <link href="assets/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet" media="none"
+    onload="if(media!=='all')media='all'">
+  <link href="assets/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet" media="none"
+    onload="if(media!=='all')media='all'">
   <link href="assets/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
   <link href="assets/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
   <!-- Main stylesheet and color file-->
   <link href="assets/css/style.css" rel="stylesheet">
-  <!-- <link id="color-scheme" href="assets/css/colors/default.css" rel="stylesheet"> -->
 
 </head>
 
@@ -607,29 +609,29 @@
     -->
   <script src="assets/lib/jquery/dist/jquery.js"></script>
   <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="assets/lib/wow/dist/wow.js"></script>
+  <script src="assets/lib/wow/dist/wow.js" defer></script>
   <!-- <script src="assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script> -->
-  <script src="assets/lib/isotope/dist/isotope.pkgd.js"></script>
+  <script src="assets/lib/isotope/dist/isotope.pkgd.js" defer></script>
   <script src="assets/lib/imagesloaded/imagesloaded.pkgd.js"></script>
-  <script src="assets/lib/flexslider/jquery.flexslider.js"></script>
-  <script src="assets/lib/owl.carousel/dist/owl.carousel.min.js"></script>
-  <script src="assets/lib/smoothscroll.js"></script>
+  <script src="assets/lib/flexslider/jquery.flexslider.js" defer></script>
+  <script src="assets/lib/owl.carousel/dist/owl.carousel.min.js" defer></script>
+  <script src="assets/lib/smoothscroll.js" defer></script>
   <script src="assets/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
   <script src="assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/main.js"></script>
 
   <!-- Sending email -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer>
   </script>
-  <script type="text/javascript">
+  <script type="text/javascript" defer>
     (function () {
       emailjs.init({
         publicKey: "wNsoWi9ZmSfgJ_PzY",
       });
     })();
   </script>
-  <script type="text/javascript">
+  <script type="text/javascript" defer>
     document.getElementById('contactForm').addEventListener('submit', function (event) {
       event.preventDefault(); // prevent form from submitting
 
