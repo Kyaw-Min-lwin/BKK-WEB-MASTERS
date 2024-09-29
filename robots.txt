@@ -1,0 +1,7 @@
+User-agent: Googlebot
+User-agent: Googlebot-Mobile
+User-agent: bingbot
+User-agent: *
+Allow: /
+
+Sitemap: https://www.bkkwebmasters.com/sitemap.xml
