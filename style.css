@@ -1,0 +1,985 @@
+/* Color Palette Variables */
+:root {
+  --aero: hsla(198, 78%, 64%, 1);
+  --maize: hsla(53, 98%, 65%, 1);
+  --yellow-green: hsla(79, 54%, 51%, 1);
+  --persian-red: hsla(1, 52%, 51%, 1);
+  --outer-space: hsla(176, 10%, 28%, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: var(--outer-space);
+  background-color: #f9f9f9;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+
+
+
+
+
+.accordion-button.collapsed {
+  background: var(--aero);
+  color: white;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--aero);
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, var(--aero), var(--outer-space)) !important;
+  /* Dynamic gradient */
+  padding: 15px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.9) !important;
+  /* Darker background on scroll */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-brand {
+  color: #fdde82;
+  /* background-color: rgba(0, 0, 0, 0.9) !important; */
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo {
+  height: 40px;
+  /* Adjust height to fit the navbar */
+  width: auto;
+  /* Keep the aspect ratio */
+}
+
+
+.brand-text:hover {
+  color: white;
+  /* Subtle hover effect */
+}
+
+
+.navbar-nav .nav-link {
+  color: white;
+  margin: 0 10px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--maize);
+  /* Add a smooth hover effect */
+}
+
+/* Underline animation */
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: var(--maize);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Highlight a specific link (e.g., "Contact") */
+.navbar-nav .nav-link.highlight {
+  color: var(--yellow-green) !important;
+  border: 1px solid var(--yellow-green);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav .nav-link.highlight:hover {
+  background: var(--yellow-green);
+  color: black !important;
+}
+
+/* Responsive fixes */
+@media (max-width: 992px) {
+  .navbar-nav .nav-link {
+    text-align: center;
+    margin: 10px 0;
+  }
+}
+
+
+
+/* Header Section */
+/* Hero Section Styling */
+.hero-section {
+  min-height: 100vh;
+  margin-top: 56px;
+  background: url('./assets/images/background-image.png') no-repeat center center fixed;
+  /* Beautiful gradient */
+  background-attachment: fixed;
+  /* Parallax effect */
+  background-size: cover;
+  /* Full cover background */
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  /* Ensures no content overflows */
+  z-index: 1;
+  /* padding: 0 20px; */
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  /* Subtle dark shadow for contrast */
+}
+
+/* Make the container fill the entire height of the hero section */
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  /* Make sure the container takes up the full height */
+  display: flex;
+  /* Flexbox for alignment */
+  flex-direction: column;
+  /* Stack the items vertically */
+  justify-content: center;
+  /* Vertically center the content */
+  align-items: center;
+  /* Horizontally center the content */
+  text-align: center;
+}
+
+/* Text Animation */
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--maize);
+  /* Eye-catching color for heading */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: slideInFromTop 1s ease-out;
+}
+
+/* Animation for Paragraph */
+.hero-description {
+  font-size: 1.2rem;
+  color: var(--mint-green);
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Tagline text styling */
+.hero-tagline {
+  font-size: 1.3rem;
+  color: white;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Pulsing Button */
+.hero-btn {
+  animation: pulse 2s infinite;
+  background: var(--persian-red);
+  color: white;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: var(--yellow-green);
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Optional Overlay for Depth */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 0;
+  /* Place behind text and button */
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  /* Ensure content stays above the overlay */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+    /* Adjust font size on smaller screens */
+  }
+
+  .hero-section p {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* About Us Section */
+#about {
+  background: url('./assets/images/background-image2.png') no-repeat center center fixed;
+  background-size: cover;
+  padding: 80px 20px;
+  /* Increase padding for more spacing */
+  text-align: center;
+  color: var(--outer-space);
+  position: relative;
+}
+
+/* Overlay for text contrast */
+#about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Dark overlay for text visibility */
+  z-index: 1;
+}
+
+#about .container {
+  position: relative;
+  z-index: 2;
+  /* Ensure text stays above the overlay */
+}
+
+/* Section Title */
+#about h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--maize);
+  /* Bright, contrasting color for the heading */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  /* Text shadow for depth */
+}
+
+/* Main paragraph description */
+#about p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--mint-green);
+  /* Soft color for body text */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  /* Subtle text shadow */
+}
+
+/* Icons and features */
+.icon-large {
+  font-size: 3rem;
+  color: var(--maize);
+  /* Color the icons to match the theme */
+  transition: color 0.3s ease;
+}
+
+.icon-large:hover {
+  color: var(--yellow-green);
+  /* Hover effect for icons */
+}
+
+#about .row {
+  margin-top: 40px;
+}
+
+/* Feature Titles */
+#about h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 20px;
+  color: var(--aero);
+  /* Heading color for features */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Feature Paragraphs */
+#about p {
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 300;
+}
+
+/* Call to Action Button */
+#about .btn-primary {
+  background: var(--persian-red);
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+}
+
+#about .btn-primary:hover {
+  background: var(--yellow-green);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #about h2 {
+    font-size: 2.5rem;
+  }
+
+  #about p {
+    font-size: 1rem;
+  }
+
+  #about .icon-large {
+    font-size: 2rem;
+  }
+
+  #about h4 {
+    font-size: 1.2rem;
+  }
+}
+
+
+/* Services Section */
+.services {
+  background: var(--yellow-green);
+  color: white;
+  padding: 60px 20px;
+}
+
+.services h2 {
+  color: var(--maize);
+}
+
+.service-card {
+  background: white;
+  border: none;
+  color: var(--outer-space);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h4 {
+  color: var(--aero);
+}
+
+.service-card p {
+  color: var(--outer-space);
+}
+
+
+/* General Progress Bar Styling */
+.progress {
+  height: 15px;
+  border-radius: 25px;
+  background: #e0e0e0;
+  /* Light gray background for progress bar */
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 25px;
+  transition: width 0.5s ease-in-out;
+  /* Smooth transition for width change */
+  /* Smooth transition when progress bar fills up */
+}
+
+/* Expertise Section Styling */
+
+#expertise {
+  background: url('./assets/images/background-image4.png');
+}
+
+.expertise-bar {
+  margin-bottom: 30px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expertise-bar:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.expertise-bar p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--outer-space);
+  margin-bottom: 5px;
+  position: relative;
+}
+
+/* Expertise Progress Bar Text */
+.expertise-bar .progress-bar {
+  width: 0%;
+  /* Start at 0% */
+  border-radius: 25px;
+  background-color: var(--aero);
+  /* Default progress bar color */
+}
+
+/* Expertise Bar Icons */
+.expertise-bar i {
+  font-size: 1.5rem;
+  color: var(--maize);
+  margin-right: 10px;
+}
+
+/* Expertise Progress Bar Colors (can change depending on expertise) */
+.expertise-bar .progress-bar.bg-success {
+  background-color: var(--mint-green);
+}
+
+.expertise-bar .progress-bar.bg-info {
+  background-color: var(--vista-blue);
+}
+
+.expertise-bar .progress-bar.bg-warning {
+  background-color: var(--yellow-green);
+}
+
+.expertise-bar .progress-bar.bg-danger {
+  background-color: var(--persian-red);
+}
+
+/* Expertise Progress Bar Percentage (Float to the right) */
+.expertise-bar span.float-end {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--outer-space);
+}
+
+/* Adding Hover Effect for Expertise Bar */
+.expertise-bar:hover .progress-bar {
+  transition: width 0.7s ease-in-out;
+  /* Slow down the width transition for hover effect */
+  width: 100%;
+  /* Expand the progress bar when hovered */
+}
+
+.expertise-bar .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--yellow-green);
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 50%;
+}
+
+/* FAQ Section */
+#faq {
+  background: var(--outer-space);
+  color: white;
+  padding: 60px 20px;
+
+}
+
+.accordion-button {
+  background: var(--maize);
+  color: white;
+  border: none;
+  transition: background 0.3s ease;
+  font-weight: 600;
+}
+
+.accordion-button:hover {
+  background: var(--yellow-green);
+}
+
+.accordion-item {
+  border: none;
+  background: transparent;
+}
+
+.accordion-body {
+  color: var(--outer-space);
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+@media (max-width: 768px) {
+  #faq .accordion-button {
+    font-size: 1rem;
+  }
+
+  .expertise-bar p {
+    font-size: 14px;
+  }
+}
+
+
+/* Portfolio Section */
+
+/* Portfolio Section Styling */
+#portfolio {
+  background: url('./assets/images/background-image3.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  color: white;
+  padding: 80px 20px;
+}
+
+/* Overlay for Background */
+#portfolio::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Dark overlay */
+  z-index: 0;
+}
+
+/* Portfolio Container */
+#portfolio .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Portfolio Items Layout */
+.portfolio-item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Styling */
+.portfolio-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 5px solid var(--persian-red);
+}
+
+/* Portfolio Item Titles */
+.portfolio-item h5 {
+  padding: 15px;
+  background: var(--yellow-green);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Badge Styling */
+.portfolio-item .badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: var(--aero);
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+/* Text Shadow for Titles */
+.portfolio-item h5 {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #portfolio h2 {
+    font-size: 2rem;
+  }
+
+  .portfolio-item img {
+    height: 180px;
+    /* Adjust image size for mobile */
+  }
+
+  .portfolio-item h5 {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+/* Contact Section Styling */
+.contact-section {
+  background: linear-gradient(to bottom right, var(--aero), var(--outer-space));
+  color: white;
+  padding: 60px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  color: var(--maize);
+}
+
+.contact-section .module-subtitle {
+  color: var(--mint-green);
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+/* Contact Form Styling */
+.contact-form {
+  background: white;
+  color: var(--outer-space);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form .form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 2px solid var(--mint-green);
+  border-radius: 30px;
+  padding: 15px 40px;
+  font-size: 1rem;
+  color: var(--outer-space);
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--maize);
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 128, 128, 0.3);
+}
+
+.contact-form button {
+  background: var(--persian-red);
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--yellow-green);
+  box-shadow: 0 8px 20px rgba(0, 128, 0, 0.2);
+}
+
+/* Input Icons */
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: var(--aero);
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+/* Contact Info Styling */
+.contact-info .info-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.contact-info .info-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.contact-info .info-icon {
+  font-size: 2rem;
+  color: var(--maize);
+  margin-bottom: 10px;
+}
+
+.contact-info .info-title {
+  font-size: 1.2rem;
+  color: var(--mint-green);
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  color: white;
+}
+
+/* General Footer Styling */
+div#end::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6) !important;
+  /* Dark overlay */
+  z-index: 0;
+
+}
+
+div#end {
+  background: url('./assets/images/footer-bg.webp') no-repeat !important;
+  background-size: cover !important;
+  position: relative;
+}
+
+.module-small {
+  padding: 40px 0;
+  color: white;
+}
+
+.module-small .widget-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--maize);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.module-small h6 {
+  border-bottom: 2px dotted var(--maize);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.module-small p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  /* Light gray */
+}
+
+.module-small a {
+  color: var(--aero);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.module-small a:hover {
+  color: var(--maize);
+  /* Hover effect */
+}
+
+.module-small ul {
+  list-style: none;
+  padding: 0;
+}
+
+.module-small ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+  /* Add space for the custom bullet */
+}
+
+.module-small ul li::before {
+  content: ">>";
+  position: absolute;
+  left: 0;
+  color: var(--maize);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Footer Bottom Bar */
+.footer {
+  /* background-color: #222; */
+  padding: 20px 0;
+}
+
+.footer .copyright {
+  font-size: 14px;
+  color: white;
+  margin: 0;
+}
+
+.footer a {
+  color: var(--aero);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--maize);
+}
+
+/* Footer Social Icons */
+.footer-social-links a {
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-social-links a:hover {
+  color: var(--maize);
+}
+
+/* Footer Divider */
+.divider-d {
+  border: 0;
+  height: 1px;
+  background: var(--maize);
+  margin: 20px 0;
+  opacity: 0.5;
+}
+
+/* Hover Effects on Widget Items */
+.module-small .widget:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Adding Background Gradient and Shadow to Footer */
+.footer {
+  /* background: linear-gradient(135deg, var(--outer-space), var(--vista-blue)); */
+  box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.3);
+  /* Soft shadow for footer */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .brand-text {
+    font-size: 1.2rem;
+    /* Adjust size on smaller screens */
+  }
+
+  .navbar-logo {
+    height: 30px;
+    /* Scale the logo down */
+  }
+
+  .module-small {
+    padding: 30px 0;
+  }
+
+  .module-small .widget-title {
+    font-size: 18px;
+  }
+
+  .module-small ul li {
+    padding-left: 15px;
+  }
+
+  .footer .footer-social-links a {
+    font-size: 1.3rem;
+  }
+}
