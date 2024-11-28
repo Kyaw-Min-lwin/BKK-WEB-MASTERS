@@ -175,7 +175,7 @@ html {
   min-height: 100vh;
   margin-top: 0px;
   padding-top: 56px;
-  background: url('./assets/images/background-image.png') no-repeat center center fixed;
+  background: url('./assets/images/background-image.avif') no-repeat center center fixed;
   /* Beautiful gradient */
   background-attachment: fixed;
   /* Parallax effect */
@@ -330,7 +330,7 @@ html {
 
 /* About Us Section */
 #about {
-  background: url('./assets/images/background-image2.png') no-repeat center center fixed;
+  background: url('./assets/images/background-image2.avif') no-repeat center center fixed;
   background-size: cover;
   padding: 80px 20px;
   /* Increase padding for more spacing */
@@ -472,7 +472,7 @@ html {
 /* Expertise Section Styling */
 
 #expertise {
-  background: url('./assets/images/background-image4.png');
+  background: url('./assets/images/background-image4.avif');
 }
 
 .expertise-bar {
