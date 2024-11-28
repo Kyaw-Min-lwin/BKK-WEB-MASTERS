@@ -24,10 +24,6 @@ body {
 }
 
 
-
-
-
-
 .accordion-button.collapsed {
   background: var(--aero);
   color: white;
@@ -47,64 +43,69 @@ a:hover {
   color: var(--aero);
 }
 
-/* Navbar */
+/* Navbar Styling */
 .navbar {
-  background: linear-gradient(90deg, var(--aero), var(--outer-space)) !important;
-  /* Dynamic gradient */
-  padding: 15px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)) !important;
+  /* A dark charcoal color */
+  padding: 20px 0;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.9) !important;
-  /* Darker background on scroll */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
 .navbar-brand {
-  color: #fdde82;
-  /* background-color: rgba(0, 0, 0, 0.9) !important; */
+  color: #fff;
   font-weight: bold;
-  font-size: 1.8rem;
-  text-transform: uppercase;
+  font-size: 2rem;
   letter-spacing: 2px;
+  text-transform: uppercase;
   transition: color 0.3s ease;
 }
 
 .navbar-logo {
   height: 40px;
-  /* Adjust height to fit the navbar */
   width: auto;
-  /* Keep the aspect ratio */
+  transition: transform 0.3s ease;
 }
 
+.navbar-logo:hover {
+  transform: scale(1.1);
+}
 
 .brand-text:hover {
-  color: white;
-  /* Subtle hover effect */
+  color: var(--yellow-green);
 }
 
-
+/* Navbar Links Styling */
 .navbar-nav .nav-link {
-  color: white;
-  margin: 0 10px;
+  color: #fff;
   font-weight: 500;
+  margin: 0 15px;
   position: relative;
-  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
   color: var(--maize);
-  /* Add a smooth hover effect */
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
 }
 
-/* Underline animation */
 .navbar-nav .nav-link::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: -4px;
   width: 0;
   height: 2px;
   background: var(--maize);
@@ -115,6 +116,21 @@ a:hover {
   width: 100%;
 }
 
+/* Highlighted "Contact" Link */
+.navbar-nav .nav-link.highlight {
+  color: var(--yellow-green);
+  border: 2px solid var(--yellow-green);
+  border-radius: 20px;
+  font-weight: 600;
+  padding: 6px 15px;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.navbar-nav .nav-link.highlight:hover {
+  background-color: var(--yellow-green);
+  color: black !important;
+}
+
 .navbar-toggler {
   border: none;
 }
@@ -123,28 +139,33 @@ a:hover {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* Highlight a specific link (e.g., "Contact") */
-.navbar-nav .nav-link.highlight {
-  color: var(--yellow-green) !important;
-  border: 1px solid var(--yellow-green);
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-weight: 600;
-  transition: background 0.3s ease, color 0.3s ease;
+/* Smooth Scrolling on Navbar Links */
+html {
+  scroll-behavior: smooth;
 }
 
-.navbar-nav .nav-link.highlight:hover {
-  background: var(--yellow-green);
-  color: black !important;
+/* Navbar Background Effects */
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.9) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsive fixes */
+/* Responsive Design */
 @media (max-width: 992px) {
   .navbar-nav .nav-link {
     text-align: center;
     margin: 10px 0;
   }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .navbar-toggler {
+    margin-right: 10px;
+  }
 }
+
 
 
 
@@ -152,7 +173,8 @@ a:hover {
 /* Hero Section Styling */
 .hero-section {
   min-height: 100vh;
-  margin-top: 56px;
+  margin-top: 0px;
+  padding-top: 56px;
   background: url('./assets/images/background-image.png') no-repeat center center fixed;
   /* Beautiful gradient */
   background-attachment: fixed;
@@ -429,37 +451,6 @@ a:hover {
   }
 }
 
-
-/* Services Section */
-.services {
-  background: var(--yellow-green);
-  color: white;
-  padding: 60px 20px;
-}
-
-.services h2 {
-  color: var(--maize);
-}
-
-.service-card {
-  background: white;
-  border: none;
-  color: var(--outer-space);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.service-card h4 {
-  color: var(--aero);
-}
-
-.service-card p {
-  color: var(--outer-space);
-}
 
 
 /* General Progress Bar Styling */

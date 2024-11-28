@@ -59,13 +59,17 @@
       --outer-space: hsla(176, 10%, 28%, 1);
     }
 
+    body {
+      background: url('./assets/images/pricing-bg2.jpg') no-repeat center center/cover;
+      background-attachment: fixed;
+    }
+
     /* General Section Styling */
     .pricing {
-      margin-top: 56px;
-      background: url('./assets/images/pricing-bg2.jpg') no-repeat center center/cover;
+      margin-top: 0;
       padding: 60px 20px;
+      padding-top: 120px;
       color: white;
-      background-attachment: fixed;
     }
 
     h1 {
@@ -263,6 +267,123 @@
       font-weight: 900;
     } */
 
+    /* Flip Card Container */
+    /* Global Box-Sizing */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    /* Flip Card Container */
+    .flip-card {
+      perspective: 1000px;
+      margin-bottom: 30px;
+    }
+
+    /* Flip Card Inner */
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 300px !important;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+    }
+
+    /* Front Side */
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transition: transform 0.5s ease;
+    }
+
+    .flip-card-front {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .flip-card-back {
+      background: var(--outer-space);
+      color: white;
+      transform: rotateY(180deg);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Flip on Hover */
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* Service Icons & Titles */
+    #service {
+      margin-bottom: 20px;
+    }
+
+    .service-item i {
+      font-size: 3rem;
+      color: var(--maize);
+    }
+
+    .service-item h4 {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      color: var(--yellow-green);
+    }
+
+    /* Service Details (Back Side) */
+    .flip-card-back ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .flip-card-back ul li {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: var(--outer-space);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .flip-card-back ul li i {
+      color: var(--aero);
+      margin-right: 10px;
+    }
+
+    /* Button Styling */
+    .service-item .btn {
+      background-color: var(--yellow-green);
+      color: white;
+      border-radius: 30px;
+      padding: 10px 30px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .service-item .btn:hover {
+      background-color: var(--maize);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+
+      .flip-card-front,
+      .flip-card-back {
+        padding: 20px;
+      }
+
+      .flip-card-inner {
+        transform: scale(0.95);
+      }
+    }
 
     @media (max-width: 768px) {
       .pricing-package {
@@ -485,9 +606,92 @@
     </div>
   </section>
 
+  <section id="services" class="py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold text-uppercase">Our Services</h2>
+      <div class="row text-center">
+        <!-- Web Development -->
+        <div class="col-md-3">
+          <div class="service-item flip-card">
+            <div class="flip-card-inner">
+              <!-- Front Side -->
+              <div class="flip-card-front">
+                <i class="bi bi-laptop"></i>
+                <h4>Web Development</h4>
+                <p>Custom websites tailored to your business goals.</p>
+              </div>
+              <!-- Back Side -->
+              <div class="flip-card-back">
+                <h4>Web Development</h4>
+                <p>We create custom websites with responsive design and robust functionality to meet your business
+                  needs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- UI/UX Design -->
+        <div class="col-md-3">
+          <div class="service-item flip-card">
+            <div class="flip-card-inner">
+              <!-- Front Side -->
+              <div class="flip-card-front">
+                <i class="bi bi-pencil"></i>
+                <h4>UI/UX Design</h4>
+                <p>Intuitive and user-friendly interface design.</p>
+              </div>
+              <!-- Back Side -->
+              <div class="flip-card-back">
+                <h4>UI/UX Design</h4>
+                <p>We design seamless user experiences to ensure your visitors have an engaging journey on your website
+                  or app.</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <!-- SEO Optimization -->
+        <div class="col-md-3">
+          <div class="service-item flip-card">
+            <div class="flip-card-inner">
+              <!-- Front Side -->
+              <div class="flip-card-front">
+                <i class="bi bi-bar-chart-line"></i>
+                <h4>SEO Optimization</h4>
+                <p>Boost your site’s visibility with advanced SEO strategies.</p>
+              </div>
+              <!-- Back Side -->
+              <div class="flip-card-back">
+                <h4>SEO Optimization</h4>
+                <p>We enhance your website’s visibility and rankings through targeted SEO strategies and content
+                  optimization.</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <!-- E-commerce Solutions -->
+        <div class="col-md-3">
+          <div class="service-item flip-card">
+            <div class="flip-card-inner">
+              <!-- Front Side -->
+              <div class="flip-card-front">
+                <i class="bi bi-shop"></i>
+                <h4>E-commerce Solutions</h4>
+                <p>Build and scale your online store with our expert services.</p>
+              </div>
+              <!-- Back Side -->
+              <div class="flip-card-back">
+                <h4>E-commerce Solutions</h4>
+                <p>We provide scalable and secure e-commerce solutions to help your business grow online.</p>
 
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </section>
 
 
 
@@ -510,9 +714,9 @@
             <div class="widget">
               <h6 class="widget-title font-alt">Our Services</h6>
               <ul class="icon-list">
-                <li><a href="./service.html">Web Development</a></li>
-                <li><a href="./service.html">E-commerce Solutions</a></li>
-                <li><a href="./service.html">SEO Services</a></li>
+                <li><a href="#services">Web Development</a></li>
+                <li><a href="#services">E-commerce Solutions</a></li>
+                <li><a href="#services">SEO Services</a></li>
               </ul>
             </div>
           </div>
