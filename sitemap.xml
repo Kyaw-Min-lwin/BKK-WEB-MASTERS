@@ -2,17 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>https://bkkwebmasters.com/index.html</loc>
-      <lastmod>2024-09-25</lastmod>
+      <lastmod>2024-011-28</lastmod>
       <priority>1.00</priority>
    </url>
    <url>
-      <loc>https://bkkwebmasters.com/service.html</loc>
-      <lastmod>2024-09-25</lastmod>
-      <priority>0.80</priority>
-   </url>
-   <url>
       <loc>https://bkkwebmasters.com/pricing.html</loc>
-      <lastmod>2024-09-25</lastmod>
+      <lastmod>2024-011-28</lastmod>
       <priority>0.80</priority>
    </url>
 </urlset>
