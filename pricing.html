@@ -397,15 +397,33 @@
       }
     }
   </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16711589849"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16711589849"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'AW-16711589849');
-</script>
+              gtag('config', 'AW-16711589849');
+            </script>
+  <!-- Event snippet for Purchase conversion page
+          In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof (url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-16711589849/RK92CIrr2NUZENm_2qA-',
+        'transaction_id': '',
+        'event_callback': callback
+      });
+      return false;
+    }
+  </script>
+
 </head>
 
 <body>
@@ -454,7 +472,8 @@
               <li><i class="bi bi-check-circle"></i> Contact Form Integration</li>
               <li><i class="bi bi-check-circle"></i> 1 Month of Free Support</li>
             </ul>
-            <a href="https://buy.stripe.com/4gwg1X3bB1OE6ME000" class="btn btn-primary btn-block mt-3">Get Started</a>
+            <a href="https://buy.stripe.com/4gwg1X3bB1OE6ME000" class="btn btn-primary btn-block mt-3"
+              onclick="gtag_report_conversion('https://buy.stripe.com/4gwg1X3bB1OE6ME000')">Get Started</a>
           </div>
         </div>
 
@@ -470,7 +489,8 @@
               <li><i class="bi bi-check-circle"></i> Social Media Integration</li>
               <li><i class="bi bi-check-circle"></i> 3 Months of Free Support</li>
             </ul>
-            <a href="https://buy.stripe.com/cN2aHD3bB0KAgne7st" class="btn btn-primary btn-block mt-3">Get Started</a>
+            <a href="https://buy.stripe.com/cN2aHD3bB0KAgne7st" class="btn btn-primary btn-block mt-3"
+              onclick="gtag_report_conversion('https://buy.stripe.com/cN2aHD3bB0KAgne7st')">Get Started</a>
           </div>
         </div>
 
@@ -488,7 +508,9 @@
               <li><i class="bi bi-check-circle"></i> SEO Optimization (Best SEO services)</li>
               <li><i class="bi bi-check-circle"></i> 6 Months of Free Support</li>
             </ul>
-            <a href="https://buy.stripe.com/14k02Z5jJ2SI3AsbIK" class="btn btn-primary btn-block mt-3">Get Started</a>
+            <a href="https://buy.stripe.com/14k02Z5jJ2SI3AsbIK"
+              onclick="gtag_report_conversion('https://buy.stripe.com/14k02Z5jJ2SI3AsbIK')"
+              class="btn btn-primary btn-block mt-3">Get Started</a>
           </div>
         </div>
 
@@ -506,7 +528,9 @@
               <li><i class="bi bi-check-circle"></i> Ongoing Support and Maintenance</li>
               <li><i class="bi bi-check-circle"></i> Custom Features</li>
             </ul>
-            <a href="https://buy.stripe.com/fZe1737rR9h69YQ4gj" class="btn btn-primary btn-block mt-3">Get Started</a>
+            <a href="https://buy.stripe.com/fZe1737rR9h69YQ4gj"
+              onclick="gtag_report_conversion('https://buy.stripe.com/fZe1737rR9h69YQ4gj')"
+              class="btn btn-primary btn-block mt-3">Get Started</a>
           </div>
         </div>
       </div>
@@ -698,9 +722,9 @@
             </div>
           </div>
         </div>
-        </div>
-        </div>
-        </section>
+      </div>
+      </div>
+      </section>
 
 
 
